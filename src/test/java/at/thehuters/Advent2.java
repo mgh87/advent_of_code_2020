@@ -1,15 +1,42 @@
 package at.thehuters;
 
+import at.thehuters.advent2.SecurityGuideline;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 
-public class Advent2 {
+class TestAdvent2 {
 
     @Test
     void testCase1() {
-        Arrays.stream(dataCase1().split("\n}")).
+        int numberOfCorrectPolicies = 0;
+        for(String inputString : dataCase1().split("\n")){
+            var inputParts = inputString.split(" ");
+            var minMaxArray = inputParts[0].split("-");
+            if(new SecurityGuideline(
+                    Integer.parseInt(minMaxArray[0]),
+                    Integer.parseInt(minMaxArray[1]),
+                    inputParts[1].charAt(0)).check(inputParts[2])){
+                numberOfCorrectPolicies++;
+            }
+        }
+        System.out.println(numberOfCorrectPolicies);
 
+    }
+
+    @Test
+    void testCase2() {
+        int numberOfCorrectPolicies = 0;
+        for(String inputString : dataCase1().split("\n")){
+            var inputParts = inputString.split(" ");
+            var minMaxArray = inputParts[0].split("-");
+            if(new SecurityGuideline(
+                    Integer.parseInt(minMaxArray[0]),
+                    Integer.parseInt(minMaxArray[1]),
+                    inputParts[1].charAt(0)).checkPart2(inputParts[2])){
+                numberOfCorrectPolicies++;
+            }
+        }
+        System.out.println(numberOfCorrectPolicies);
 
     }
 
