@@ -1,6 +1,5 @@
 package at.thehuters;
 
-import at.thehuters.advent2.SecurityGuideline;
 import org.junit.jupiter.api.Test;
 import org.paukov.combinatorics3.Generator;
 
